@@ -1,0 +1,190 @@
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  
+        margin:-90px 0px 0px -198px;
+    }
+}
+
+
+@media only screen and (min-width: 993px) {
+    nav a.button-collapse {
+        display: initial;
+    }
+}
+
+
+@media only screen and (max-width: 992px){
+.side-nav .user-view, .side-nav .userView {
+    padding: 16px 16px 0;
+}
+}
+
+
+.side-nav .user-view, .side-nav .userView {
+    position: relative;
+    padding: 32px 32px;
+    margin-bottom: 8px;
+}
+
+.side-nav .user-view .background, .side-nav .userView .background {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: #a51c38;
+}
+
+/*======================================*/
+
+.red_wallpaper {
+    background: rgba(165, 28, 56, 1.9) url('../img/red_polygon.jpg');
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+
+.gs_red {
+    padding: 20px;
+    background: #a51c38;
+}
+
+.padding-100 {
+    padding-top: 100px;
+}
+
+.padding-50 {
+    padding-top: 50px;
+}
+
+.padding-20 {
+    padding-top: 20px;
+}
+
+.red_gra {
+    border: none;
+    background: #a91827;
+    background: -moz-linear-gradient(top,#a91827 0%,#540c19 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#a91827),color-stop(100%,#540c19));
+    background: -webkit-linear-gradient(top,#a91827 0%,#540c19 100%);
+    background: -o-linear-gradient(top,#a91827 0%,#540c19 100%);
+    background: -ms-linear-gradient(top,#a91827 0%,#540c19 100%);
+    background: linear-gradient(to bottom,#a91827 0%,#540c19 100%);
+}
+
+.margin-20 {
+    margin-top: 20px;
+}
+
+
+.white-text, 
+.white-text:hover, 
+.white-text:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.black-text, 
+.black-text:hover, 
+.black-text:focus {
+    color: rgba(0,0,0,0.87);
+    text-decoration: none;
+}
+
+
+.form-control:focus {
+    box-shadow: none;
+    border: none;
+}
+
+
+.btn, .btn:hover, .btn:focus {
+    outline: 0px !important;
+    color: #fff;
+}
+
+.c_input, .c_input:focus {
+    border-bottom: 1px solid #fff !important;
+    color: #fff;
+}
+
+.thun {
+    height: 200px;
+}
+
+/* Page Loader ================================= */
+.page-loader-wrapper {
+    z-index: 99999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #a51c38;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.page-loader-wrapper p {
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #444;
+}
+
+
+.page-loader-wrapper .loader {
+    position: relative;
+    top: calc(50% - 30px);
+}
+
+.wht {
+    border-color: #fff;
+}
+
+.my_red {
+   background: #a51c38; 
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+
+.my-select, .my-select:focus {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff !important;
+    outline: none !important;
+    color: #fff;
+}
+
+
+option {
+    color: #fff;
+    font-weight: bold;
+    padding: 20px 5px;
+    background: #a51c38;
+}
+
+option:hover {color:blue}
+
