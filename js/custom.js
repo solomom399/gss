@@ -56,6 +56,20 @@ $(document).ready(function () {
 		        callback()
 		    })
 		}
+
+
+		this.warn = function (text, callback) {
+			swal({
+				title: '',
+				text: '<p>'+text+'</p>',
+				html: true,
+				type: 'warning',
+				confirmButtonClass : 'btn red darken-4'
+			},
+			function () {
+		        callback()
+		    })
+		}
 	}
 	
 
@@ -116,6 +130,10 @@ $(document).ready(function () {
 			if (username == student_details_object.username && password == student_details_object.password) {
 				localStorage.setItem("user_status", 'logged_in')
 				window.location = 'data/index.html'
+			} else {
+				gss.warn('Invalid login details', function () {
+					swal.close()
+				})
 			}
 			
 		}
