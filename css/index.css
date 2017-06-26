@@ -170,6 +170,10 @@ a:hover {
     text-decoration: none;
 }
 
+.error {
+    color: #fff; 
+}
+
 .my-select, .my-select:focus {
     background: transparent;
     border: none;
