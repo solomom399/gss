@@ -92,52 +92,61 @@ $(document).ready(function () {
 	})
 
 
-	$("#register_form").on('submit', function () {
-		gss.load('Please wait...')
-		var surname = $('input[name=surname]').val()
-		var firstname = $('input[name=firstname]').val()
-		var s_class = $('input[name=s_class]').val()
-		var username = $('input[name=r_username]').val()
-		var password = $('input[name=r_password]').val()
-		var gender = $('select[name=gender]').val()
+	$("#register_form").validate({
+		ignore: ".ignore",
+	    showErrors: function(errorMap, errorList) {
+	        $(".form-errors").html("All fields must be completed before you submit the form.");
+	    },
+		submitHandler: function (form) {
+			gss.load('Please wait...')
+			var surname = $('input[name=surname]').val()
+			var firstname = $('input[name=firstname]').val()
+			var s_class = $('input[name=s_class]').val()
+			var username = $('input[name=r_username]').val()
+			var password = $('input[name=r_password]').val()
+			var gender = $('select[name=gender]').val()
 
 
-		var student_details = {
-			'surname': surname,
-			'firstname': firstname,
-			's_class': s_class,
-			'username': username,
-			'password': password,
-			'gender': gender
+			var student_details = {
+				'surname': surname,
+				'firstname': firstname,
+				's_class': s_class,
+				'username': username,
+				'password': password,
+				'gender': gender
+			}
+
+			localStorage.setItem("student_details", JSON.stringify(student_details))
+			
+			gss.success('You have successfully registered...click ok to login', function () {
+				$(".point-to-login").trigger('click')
+				$("#register_form").trigger('reset')
+			})
+
+			return false
 		}
-
-		localStorage.setItem("student_details", JSON.stringify(student_details))
-		
-		gss.success('You have successfully registered...click ok to login', function () {
-			$(".point-to-login").trigger('click')
-		})
-
-		return false
 	})
 
 
-	$("#login_form").on('submit', function () {
-		var username = $("input[name=username]").val()
-		var password = $("input[name=password]").val()
-		gss.load('Please wait...')
-		if (localStorage.getItem('student_details') != null) {
-			var student_details_object = JSON.parse(localStorage.getItem('student_details'))
-			if (username == student_details_object.username && password == student_details_object.password) {
-				localStorage.setItem("user_status", 'logged_in')
-				window.location = 'data/index.html'
-			} else {
-				gss.warn('Invalid login details', function () {
-					swal.close()
-				})
+	$("#login_form").validate({
+		submitHandler: function (form) {
+			var username = $("input[name=username]").val()
+			var password = $("input[name=password]").val()
+			gss.load('Please wait...')
+			if (localStorage.getItem('student_details') != null) {
+				var student_details_object = JSON.parse(localStorage.getItem('student_details'))
+				if (username == student_details_object.username && password == student_details_object.password) {
+					localStorage.setItem("user_status", 'logged_in')
+					window.location = 'data/index.html'
+				} else {
+					gss.warn('Invalid login details', function () {
+						swal.close()
+					})
+				}
+				
 			}
-			
+			return false
 		}
-		return false
 	})
 
 
