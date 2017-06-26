@@ -144,6 +144,10 @@ $(document).ready(function () {
 					})
 				}
 				
+			} else {
+				gss.warn('You are not registered...', function () {
+					swal.close()
+				})
 			}
 			return false
 		}
